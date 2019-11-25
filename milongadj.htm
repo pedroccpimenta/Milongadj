@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Milonga DJ</title>
+
+<script type="text/javascript">
+	//Cores
+	var kor=[];
+		kor.push('#dedede')		
+		kor.push('#dedede')
+		kor.push('#dedede')		
+		kor.push('#dedede')
+		kor.push('#dedede')		
+		kor.push('#dedede')
+
+var i=0;
+	var c=[[]];
+		/*for(i=0;i<90;i++)
+		{c[i]=[];}
+		*/
+ i=0;
+	c[i]=[];
+	c[i].push({cartella:"5.CORTINAS",nome:"Abertura",tipo:"Abertura"});
+	
+		c[i].push({file:"BENNY GOODMAN - SING SING SING",nome:"BENNY GOODMAN - SING SING SING"})
+		c[i].push({file:"Chordettes - Lollipop",nome:"Chordettes - Lollipop"})
+		
+
+	c[++i]=[];
+	c[i].push({cartella:"5.CORTINAS",nome:"Cortinas",tipo:"cortinas"});
+		c[i].push({file:"BENNY GOODMAN - SING SING SING",nome:"BENNY GOODMAN - SING SING SING"})
+		c[i].push({file:"Chordettes - Lollipop",nome:"Chordettes - Lollipop"})
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+			
+	
+
+			
+		c[++i].push({cartella:"Tango X 2",nome:"Tango X 2",tipo:"tango"})
+			c[i].push({file:"Tango X 2 - El Dia Que Me Quieras",nome:"El Dia Que Me Quieras"})
+
+			c[i].push({file:"Tango X 2 - La Cumparsita (2.50)",nome:"La Cumparsita (2.50)"})
+			c[i].push({file:"Tango X 2 - La Cumparsita (2.19)",nome:"La Cumparsita (2.19)"})
+
+
+
+
+
+		c[++i].push({cartella:"Hugo Diaz",nome:"Hugo Diaz",tipo:"tango"})
+			c[i].push({file:"Hugo Diaz - Siga El Corso",nome:"Siga El Corso"})		
+
+			
+			c[i].push({file:"05. Hugo Diaz - El adiós - NF",nome:"El adiós"})		
+			c[i].push({file:"06. hugo diaz - rondando tu esquina - nf",nome:"El adiós"})		
+			c[i].push({file:"12. hugo diaz - la cumparsita - nf",nome:"la cumparsita"})
+
+		c[++i].push({cartella:".",nome:"La Cumparsita",tipo:"tango"})
+			c[i].push({file:"Francisco Lomuto/Francisco Lomuto - La Cumparsita (1936)",nome:"Francisco Lomuto"})
+
+			c[i].push({file:"Tango X 2/Tango X 2 - La Cumparsita (2.50)",nome:"Tango X 2 - La Cumparsita (2.50)"})
+			c[i].push({file:"Tango X 2/Tango X 2 - La Cumparsita (2.19)",nome:"Tango X 2 - La Cumparsita (2.19)"})
+			c[i].push({file:"Ricardo Tanturi/Instrumental/Ricardo Tanturi - La Cumparsita",nome:"Ricardo Tanturi"})
+			c[i].push({file:"Angel De Agostino/Angel D'Agostino - La Cumparsita (Angel Vargas)",nome:"De Agostino"})
+
+
+
+
+
+
+
+
+
+</script>
+
+</head>
+
+<body onLoad="go1();" style='font-size:12px;font-family: verdana'>
+
+  <audio id="audio2" preload="auto" tabindex="0" controls="volume;face;equalizer;" type="audio/mpeg" style="width:100%;">
+        <source type="audio/mp3" src="">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+    <table style="width:100%;border-radius: 10px;border:solid 1px green;text-align: center;" align=center><tr><td>
+    <input type=text id='sn' style="width:99%;">
+    <tr><td style='left;'>
+    <!-- Konsola -->
+
+	<input type=button id='autoplay' onclick="autoplay()" value='autoplay-off'>
+
+	<input type=button onclick="wplay()" value='play'>
+
+	<input type=button onclick="wstop()" value='pause'>
+	<input type=button onclick="wvol('minus')" value='<-'>
+	<input type=button id='cvol' value='.5'>
+	<input type=button onclick="wvol('plus')" value='+>'>
+
+	<input type=button onclick="wseek('minus')" value='<-10sec'>
+	<input type=button onclick="wseek('plus')" value='+10sec>'>
+
+
+
+	<input type=button onclick="wcolapsa()" value='<Colapsa'>
+
+	<input type=button onclick="wbrano('minus')" value='<brano<'>
+	<input type=button onclick="wbrano('plus')" value='>brano>'>
+
+	<input type=button id='wl' onclick="wloop('plus')" value='noloop'>
+	<input type=button id='wa' onclick="waleat('plus')" value='noaleat'>
+
+
+<!--var vid = document.getElementById("myVideo");
+vid.defaultPlaybackRate = 0.5;
+-->
+
+	<input type=text id='tanda' size=1>
+	<input type=text id='brano' size=1>
+	</table>
+
+
+
+<table border="0" style="width:100%;" cellpadding="3">
+	<tr>
+		<td style="width:33%;">
+			<div style='height: 150px;text-overflow:scroll;overflow-y:scroll;background-color: seashell'>
+			<h3 style='margin:0px;'>Abertura</h3><ol style='margin: 0px;' id="abertura"></ol></div>
+		<td style="width:33%;">
+			<div style='height: 150px;text-overflow:scroll;overflow-y:scroll;background-color: powderblue'>
+			<h3 style='margin:0px;'>Cortinas</h3><ol style='margin: 0px;' id="cortinas"></ol></div>
+		<td style="width:33%;">
+			<div style='height: 150px;text-overflow:scroll;overflow-y:scroll;background-color: seashell'>
+			<h3 style='margin:0px;'>Fecho</h3><ol style='margin: 0px;' id="fecho"></ol></div>
+</table>
+
+<table border="0" style="width:100%;" cellpadding="3">
+	<td style='vertical-align: top;width:12%;font-family: trebuchet;' id="played">
+	<td style='vertical-align: top;width:22%;' id="tandas0">
+	<td style='vertical-align: top;width:22%;' id="tandas1">	
+    <td style='vertical-align: top;width:22%;' id="tandas2">	    
+    <td style='vertical-align: top;width:22%;' id="tandas3">	
+</table>
+	
+</body>
+
+<script type="text/javascript">
+
+function go1(){
+//Abertura
+	lh=document.getElementById('abertura')
+	for(j=1;j<c[0].length;j++)
+	{		item = document.createElement("li");
+			item.innerHTML="<span id='b.0."+j+"'  style='' onclick=\"play5(this,0,"+j+");\">"+c[0][j].nome+"</span>"
+			lh.appendChild(item);
+	}
+//Cortinas
+	lh=document.getElementById('cortinas')
+	for(j=1;j<c[1].length;j++)
+	{		item = document.createElement("li");
+			item.innerHTML="<span  id='b.1."+j+"'  style='' onclick=\"play5(this,1,"+j+");\">"+c[1][j].nome+"</span>"
+			lh.appendChild(item);
+	}
+//Fecho
+	lh=document.getElementById('fecho')
+	for(j=1;j<c[2].length;j++)
+	{		item = document.createElement("li");
+			item.innerHTML="<span  id='b.2."+j+"' style='' onclick=\"play5(this,2,"+j+");\">"+c[2][j].nome+"</span>"
+			lh.appendChild(item);
+	}
+
+//Tandas
+	for(i=3;i<c.length;i++)
+	{	console.log('c[i][0].tipo:'+c[i][0].tipo)
+		ct=document.getElementById('tandas'+(i-3)%(3+1))
+		citem = document.createElement("div");
+		citem.style="border-radius: 10px;background:pink;margin-bottom:10px;"
+		citem.id='ctanda'+i;
+
+		switch(c[i][0].tipo)
+		{	case "vals": case'vals':
+				citem.style.background="pink";	
+				citem.style.background="lightpink";	
+	
+				break;
+
+			case "milonga": case'milonga':
+				citem.style.background="steelblue";
+				citem.style.background="deepskyblue";
+
+					break;
+			default:
+				citem.style.background=kor[((kor.length-1)*Math.random()).toFixed(0)];
+				citem.style.background="linen";
+				citem.style.background="moccasin";
+				citem.style.background="oldlace";
+		}
+		
+		//citem.title='tanda'+i
+		ct.appendChild(citem)				//whitesmokebackground:whitesmoke;
+		citem.innerHTML="<h3 style='border-radius: 10px;text-size:11px;margin-bottom:0px;border-bottom:red black 1px;'><input type=button value=X onclick=colapsa("+i+")> "+c[i][0].nome+"</h3>";
+
+		//citem.innerHTML="<h3 style='border-radius:8px;background:gray;color:blanchedalmond;margin:0px;'>&nbsp;"+c[i][0].nome+"</h3>"
+
+		
+		//<input type=button value=X style='margin:0px;' onclick=colapsa("+i+")> "+
+	//	citem.innerHTML+=c[i][0].nome;		
+//		citem.innerHTML+=	"</h3>"	
+		
+		item = document.createElement("ol");
+		item.style='margin:0px;display:;margin-bottom:0px;border-top:dashed silver 1px;'
+		item.id='tanda'+i
+		//item.title='tanda'+i
+		citem.appendChild(item)
+
+		lh=document.getElementById('tanda'+i)
+
+		for(j=1;j<c[i].length;j++)
+		{	console.log(c[0]+":"+c[0].length)
+
+			item = document.createElement("li");
+			item.innerHTML="<span style='margin:0px;' onclick=\"play5(this,"+i+","+j+");\">"+c[i][j].nome+"</span>"
+			item.id="b."+i+"."+j
+			item.title="b."+i+"."+j
+			lh.appendChild(item);
+		}
+	}
+}
+
+
+function colapsa(x){
+	console.log('colapsa:'+x)
+	p=document.getElementById("tanda"+x).style.display;
+	if(p=='none')
+	{document.getElementById("tanda"+x).style.display=""
+	}
+	else
+	{document.getElementById("tanda"+x).style.display='none'
+	}
+}
+
+function wplay(){
+	p=document.getElementById("audio2");
+	p.play();
+
+
+}
+function wstop(){
+	p=document.getElementById("audio2");
+	p.pause();
+}
+
+function wvol(x){
+	p=document.getElementById("audio2");
+	vol=p.volume;//.toFixed(1);
+
+	document.getElementById('cvol').value=vol.toFixed(1)
+	if(x=='minus'){
+		vol -= .1;
+	}
+	else{
+		vol += .10;
+	}
+	if(vol<0){
+		vol=0.	
+	}
+	else if(vol>1){
+		vol=1.
+	}
+	p.volume=vol.toFixed(1);	
+}
+
+function wseek(x){
+	p=document.getElementById("audio2");
+	spos=p.currentTime;//.toFixed(1);
+
+	//document.getElementById('cvol').value=vol.toFixed(1)
+	if(x=='minus'){
+		p.currentTime-=10
+	}
+	else{
+		p.currentTime+=10
+	}
+	if(vol<0){
+		vol=0.	
+	}
+	else if(vol>1){
+		vol=1.
+	}
+	//p.volume=vol.toFixed(1);	
+}
+
+
+
+function wbrano(x){
+	p=document.getElementById("audio2");
+	p.pause()
+	brano=document.getElementById("brano").value
+    tanda=document.getElementById("tanda").value
+    console.log('t:'+tanda+',b:'+brano)
+
+    if(document.getElementById("wl").value != 'loop')
+    {
+		
+
+    if(x=="plus")
+    {  	brano++
+	    	if(brano>=	c[tanda].length)
+    	{	brano=1
+    		tanda++;
+    		if(tanda>=c.length){
+    			tanda=0
+    			brano=1
+    		}
+    	}
+    }
+    else
+    {  	brano--
+  	    console.log('t:'+tanda+',b:'+brano)
+    	if(brano<1)
+    	{	tanda--;
+   		    console.log('t:'+tanda+',b:'+brano)
+    		if(tanda<0){
+    			tanda=c.length-1
+    			
+    		}
+    		brano=c[tanda].length-1
+   		    console.log('t:'+tanda+',b:'+brano)
+    	}	
+    }
+
+   	if(document.getElementById("wa").value=="aleat")	
+   	{	tanda=(Math.random()*c.length).toFixed(0)
+   		brano=(Math.random()*c[tanda].length).toFixed(0)
+   		if(brano==0)brano=1
+   	}
+}
+
+   	document.getElementById("tanda").value=tanda
+   	document.getElementById("brano").value=brano
+   	console.log('+tanda:'+tanda+'brano:'+brano)
+   	b=document.getElementById('b.'+tanda+'.'+brano)
+   	play5(b,tanda,brano)
+
+}
+
+
+function wloop(x){
+	p=document.getElementById("wl").value;
+	if(p=="loop")
+	{	document.getElementById("audio2").loop=false
+		document.getElementById("wl").value="noloop"
+	}
+	else
+	{	document.getElementById("audio2").loop=true
+		document.getElementById("wl").value="loop"
+
+	}
+}
+
+function autoplay(x){
+	p=document.getElementById("autoplay").value;
+	if(p=="autoplay-off")
+	{	document.getElementById("autoplay").value="autoplay-on"
+		
+	}
+	else
+	{	document.getElementById("autoplay").value="autoplay-off"
+	}
+}
+
+function wcolapsa(x){
+	p=document.getElementById("tanda").value*1;
+	for(i=2+1;i<p;i++)
+	{	document.getElementById("tanda"+i).style.display='none'
+	}
+}
+
+var oname=""
+
+function play5(x,i,j){
+	var err=""
+	console.log('P5:'+x);
+	p=document.getElementById("audio2")
+
+	try {	//  tryCode - Block of code to try
+			document.getElementById("audio2").src=c[i][0].cartella+"/"+c[i][j].file+".mp3";
+		}
+	catch(err) {	//catchCode - Block of code to handle errors
+			console.log("P5err1:"+err)
+		}
+	finally {	//finallyCode - Block of code to be executed regardless of the try / catch result
+  			console.log("P5err2:"+err)
+		}
+
+	p.load();	
+	document.getElementById('sn').value=c[i][0].cartella+"/"+c[i][j].file+".mp3"
+
+		p.play();
+
+l=document.getElementById("played")
+
+if(oname!=c[i][0].nome)	
+{	
+	switch(c[i][0].tipo)
+	{	case "vals":
+			l.innerHTML+="<font color='pink'>";	break;
+		case "milonga":
+			l.innerHTML+="<font color='bluesteel'>";	break;
+		default:
+			l.innerHTML+="<font color='black'>";	break;
+	}
+
+	l.innerHTML+="<br><h3 style='margin:0px;'>"+c[i][0].nome+"</h3>"
+	oname=c[i][0].nome
+}
+else
+{	l.innerHTML+="<br>"
+	//document.getElementById('played').innerHTML+="<br>"+c[i][0].cartella+"/"+c[i][j].file
+}
+l.innerHTML+="xcopy "+c[i][0].cartella+"/"+c[i][j].file+".mp3 z:\VillaNovembro2019 /S /E /Y"
+
+	//var vid = document.getElementById("myVideo");
+	//vid.controls = true;
+
+	p.controls=true
+	//alert(p.controls)
+
+	y=document.getElementById("b."+i+"."+j)
+
+	y.style.color="olive"
+	y.style.color="goldenrod"
+//	y.style.color="peru"
+	y.style.color="orange"
+
+	//y.style.color="firebrick"
+
+
+	y.style.fontWeight="bold;"
+	y.style.fontSize="13px"
+	document.getElementById("tanda").value=i
+	document.getElementById("brano").value=j
+
+	var  a=0,b=0;
+	for(a=0;a<c.length;a++)
+	{	for(b=1;b<c[a].length;b++)
+		{	y=document.getElementById("b."+a+"."+b);
+			if((a==i)&&(b==j)){}
+			else{y.style.color="black";
+			y.style.fontWeight=""
+			y.style.fontSize="12px"
+			}
+		}
+	}
+}
+
+ // audio[0].addEventListener('ended',function(e){
+	t=	document.getElementById("audio2")
+
+	//getElementById("audio2").addEventListener('ended',function(e){
+	t.addEventListener('ended',function(e){	
+    	brano=document.getElementById("brano").value
+    	tanda=document.getElementById("tanda").value
+    	console.log('tanda:'+tanda+'brano:'+brano)
+    	brano++
+    
+    	if(brano>=	c[tanda].length)
+    	{	brano=1
+    		tanda++;
+    		if(tanda>=c.length){
+    			tanda=0
+    			brano=1
+    		}
+    	}
+    	console.log('+tanda:'+tanda+'brano:'+brano)
+    	b=document.getElementById('b.'+tanda+'.'+brano)
+
+    	
+	   if(document.getElementById("autoplay").value=="autoplay-on")
+    	{ play5(b,tanda,brano)
+    	}
+    	
+
+    	document.getElementById("brano").value=brano
+    	document.getElementById("tanda").value=tanda
+    	
+    });
+
+
+
+</script>
+
+</html>
