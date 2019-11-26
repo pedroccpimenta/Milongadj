@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
-<html lang="it">
+<html lang="pt">
 <head>
 	<title>Milonga DJ</title>
 
 <script type="text/javascript">
-	//Cores
+
+	// Lista de cores de fundo
 	var kor=[];
 		kor.push('#dedede')		
 		kor.push('#dedede')
@@ -13,69 +14,94 @@
 		kor.push('#dedede')		
 		kor.push('#dedede')
 
-var i=0;
-	var c=[[]];
-		/*for(i=0;i<90;i++)
-		{c[i]=[];}
-		*/
- i=0;
+
+	var c=[[]];  // lista de (meta)tandas
+	var i=0;
+		
+ 
 	c[i]=[];
-	c[i].push({cartella:"5.CORTINAS",nome:"Abertura",tipo:"Abertura"});
-	
-		c[i].push({file:"BENNY GOODMAN - SING SING SING",nome:"BENNY GOODMAN - SING SING SING"})
-		c[i].push({file:"Chordettes - Lollipop",nome:"Chordettes - Lollipop"})
+	c[i].push({pasta:".",nome:"Abertura", tipo:"Abertura"});	
+		c[i].push({file:"Carlos Gardel/Carlos Gardel - 1930 - almagro",nome:"Carlos Gardel - Almagro"})
+		c[i].push({file:"Carlos Gardel/Carlos Gardel - 1935 - El día que me quieras",nome:"Carlos Gardel - 1935 - El día que me quieras"})
+		c[i].push({file:"Fado/Carlos do Carmo - Los ejes de mi carreta",nome:"Carlos do Carmo - Los ejes de mi carreta"})
 		
 
 	c[++i]=[];
-	c[i].push({cartella:"5.CORTINAS",nome:"Cortinas",tipo:"cortinas"});
-		c[i].push({file:"BENNY GOODMAN - SING SING SING",nome:"BENNY GOODMAN - SING SING SING"})
-		c[i].push({file:"Chordettes - Lollipop",nome:"Chordettes - Lollipop"})
+	c[i].push({pasta:".",nome:"Cortinas",tipo:"cortinas"});
+		c[i].push({file:"Frank Sinatra/Frank Sinatra - Cheek To Cheek",nome:"Frank Sinatra - Cheek To Cheek"})
+		c[i].push({file:"cortinas/Chuck Berry - Carol",nome:"Chuck Berry - Carol"})
+		c[i].push({file:"cortinas/Connie Francis - Stupid Cupid",nome:"Connie Francis - Stupid Cupid"})
+		c[i].push({file:"cortinas/Elvis Presley - All Shook Up",nome:"Elvis Presley - All Shook Up"})
+		c[i].push({file:"Louis Armstrong/Louis Armstrong - Only You",nome:"Louis Armstrong - Only You"})
+		c[i].push({file:"Louis Armstrong/Ella Fitzgerald & Louis Armstrong - Cheek To Cheek",nome:"Ella Fitzgerald & Louis Armstrong - Cheek To Cheek"})
+
 	
+	c[++i]=[];
+	c[i].push({pasta:".",nome:"Fecho",tipo:"Fecho"});
+		c[i].push({file:"Fado/Carlos do Carmo - A saudade aconteceu",nome:"Carlos do Carmo - A saudade aconteceu"})
+		c[i].push({file:"Fado/katia guerreiro - amor de mel, amor de fel",nome:"katia guerreiro - amor de mel, amor de fel"})
+		c[i].push({file:"Louis Armstrong/Louis Armstrong - What a Wonderful World",nome:"Louis Armstrong - What a Wonderful World"})
+		c[i].push({file:"Vera Lynn/Vera Lynn - We'll Meet Again",nome:"Vera Lynn - We'll Meet Again"})
+
+
+	c[++i]=[];
+	c[i].push({pasta:"Francisco Canaro",nome:"Canaro Tango I",tipo:"Tango"});
+		c[i].push({file:"Francisco Canaro - Agustín Irusta - Ventanita Florida - 1932",nome:"Francisco Canaro - Agustín Irusta - Ventanita Florida"})		
+		c[i].push({file:"Francisco Canaro - Charlo - la brisa - 1929",nome:"Francisco Canaro - la brisa"})	
+		c[i].push({file:"Francisco Canaro - Ernesto Famá - Canto -1934",nome:"Francisco Canaro - Canto"})
+		c[i].push({file:"Francisco Canaro - Langosta",nome:"Francisco Canaro - Langosta"})
+		c[i].push({file:"FRANCISCO CANARO - LA CUMPARSITA",nome:"FRANCISCO CANARO - LA CUMPARSITA"})
+
+
+	c[++i]=[];
+	c[i].push({pasta:"Francisco Canaro/vals",nome:"Canaro Vals I",tipo:"vals"});
+		c[i].push({file:"Francisco Canaro - Eduardo Adrián - Claro De Luna - 1942",nome:"Francisco Canaro - Claro De Luna"})		
+		c[i].push({file:"Francisco Canaro - Charlo - Violetas - 1931",nome:"Francisco Canaro - Violetas"})			
+		c[i].push({file:"Francisco Canaro - Francisco Amor - Farolito - 1938",nome:"Francisco Canaro - Farolito"})			
+		c[i].push({file:"Francisco Canaro - Carlos Roldán - Dos Corazones - 1944",nome:"Francisco Canaro - Dos Corazones"})		
+		c[i].push({file:"Francisco Canaro - Enrique Lucero - Dos Almas - 1946",nome:"Francisco Canaro - Dos Almas"})		
+	
+	c[++i]=[];
+	c[i].push({pasta:"Edgardo Donato",nome:"Donato Tango I",tipo:"Tango"});
+		c[i].push({file:"Edgardo Donato T (Horacio Lagos y Lita Morales) 1939 - Chapaleando Barro",nome:"Edgardo Donato - Chapaleando Barro"})		
+		c[i].push({file:"Edgardo Donato - Santa milonguita",nome:"Edgardo Donato - Santa milonguita"})			
+		c[i].push({file:"Edgardo Donato - Sinsabor",nome:"Edgardo Donato - Sinsabor"})				
+		c[i].push({file:"Edgardo Donato T (Horacio Lagos) 1938 - Alas Rotas",nome:"Edgardo Donato - Alas Rotas"})		
+		
+
+	c[++i]=[];
+	c[i].push({pasta:"Edgardo Donato/milonga",nome:"Donato milonga I",tipo:"milonga"});
+		c[i].push({file:"Edgardo Donato - Corrales Viejos",nome:"Edgardo Donato - Corrales Viejos"})
+		c[i].push({file:"Edgardo Donato - El lengue",nome:"Edgardo Donato - El lengue"})		
+		c[i].push({file:"Edgardo Donato - Ella Es Asi",nome:"Edgardo Donato - Ella Es Asi"})		
+		c[i].push({file:"Edgardo Donato - La Milonga que Faltaba",nome:"Edgardo Donato - La Milonga que Faltaba"})		
+	
+
+
+	c[++i]=[];
+	c[i].push({pasta:"Lucio Demare",nome:"Demare tango I",tipo:"Tango"});
+		c[i].push({file:"Lucio Demare y Juan Carlos Miranda - al compas de un tango",nome:"Lucio Demare - al compas de un tango"})
+		c[i].push({file:"Lucio Demare - Raúl Berón - Canta pajarito - 1943",nome:"Lucio Demare - Canta pajarito"})
+		c[i].push({file:"Lucio Demare y Juan Carlos Miranda - Malena",nome:"Lucio Demare - Malena"})
+		c[i].push({file:"Lucio Demare Juan Carlos Miranda - mañana zarpa un barco",nome:"Lucio Demare - mañana zarpa un barco"})
+
+
+
+	c[++i]=[];
+	c[i].push({pasta:".",nome:"La Cumparsita",tipo:"Tango"});
+		c[i].push({file:"Carlos Gardel/Carlos Gardel - 1927 - lacumparsita",nome:"Carlos Gardel"})
+		c[i].push({file:"FRANCISCO CANARO/FRANCISCO CANARO - LA CUMPARSITA",nome:"Francisco Canaro"})
+		c[i].push({file:"LA CUMPARSITA/armenon ville - La cumparsita",nome:"Armenonville"})
+		c[i].push({file:"LA CUMPARSITA/OT Tokio - La cumparsita",nome:"OT Tokio"})
+		c[i].push({file:"LA CUMPARSITA/Sexteto Mayor - La cumparsita",nome:"Sexteto Mayor"})
+		c[i].push({file:"LA CUMPARSITA/los tubatango - La cumparsita",nome:"los tubatango"})
+
+
+
+
 
 		
 
-
-
-
-
-
-
-
-
-
-
-		
-
-
-			
-	
-
-			
-		c[++i].push({cartella:"Tango X 2",nome:"Tango X 2",tipo:"tango"})
-			c[i].push({file:"Tango X 2 - El Dia Que Me Quieras",nome:"El Dia Que Me Quieras"})
-
-			c[i].push({file:"Tango X 2 - La Cumparsita (2.50)",nome:"La Cumparsita (2.50)"})
-			c[i].push({file:"Tango X 2 - La Cumparsita (2.19)",nome:"La Cumparsita (2.19)"})
-
-
-
-
-
-		c[++i].push({cartella:"Hugo Diaz",nome:"Hugo Diaz",tipo:"tango"})
-			c[i].push({file:"Hugo Diaz - Siga El Corso",nome:"Siga El Corso"})		
-
-			
-			c[i].push({file:"05. Hugo Diaz - El adiós - NF",nome:"El adiós"})		
-			c[i].push({file:"06. hugo diaz - rondando tu esquina - nf",nome:"El adiós"})		
-			c[i].push({file:"12. hugo diaz - la cumparsita - nf",nome:"la cumparsita"})
-
-		c[++i].push({cartella:".",nome:"La Cumparsita",tipo:"tango"})
-			c[i].push({file:"Francisco Lomuto/Francisco Lomuto - La Cumparsita (1936)",nome:"Francisco Lomuto"})
-
-			c[i].push({file:"Tango X 2/Tango X 2 - La Cumparsita (2.50)",nome:"Tango X 2 - La Cumparsita (2.50)"})
-			c[i].push({file:"Tango X 2/Tango X 2 - La Cumparsita (2.19)",nome:"Tango X 2 - La Cumparsita (2.19)"})
-			c[i].push({file:"Ricardo Tanturi/Instrumental/Ricardo Tanturi - La Cumparsita",nome:"Ricardo Tanturi"})
-			c[i].push({file:"Angel De Agostino/Angel D'Agostino - La Cumparsita (Angel Vargas)",nome:"De Agostino"})
 
 
 
@@ -116,11 +142,11 @@ var i=0;
 
 	<input type=button onclick="wcolapsa()" value='<Colapsa'>
 
-	<input type=button onclick="wbrano('minus')" value='<brano<'>
-	<input type=button onclick="wbrano('plus')" value='>brano>'>
+	<input type=button onclick="wfaixa('minus')" value='<faixa<'>
+	<input type=button onclick="wfaixa('plus')" value='>faixa>'>
 
 	<input type=button id='wl' onclick="wloop('plus')" value='noloop'>
-	<input type=button id='wa' onclick="waleat('plus')" value='noaleat'>
+	<input type=button id='wa' onclick="waleat()" value='noaleat'>
 
 
 <!--var vid = document.getElementById("myVideo");
@@ -128,7 +154,7 @@ vid.defaultPlaybackRate = 0.5;
 -->
 
 	<input type=text id='tanda' size=1>
-	<input type=text id='brano' size=1>
+	<input type=text id='faixa' size=1>
 	</table>
 
 
@@ -217,7 +243,7 @@ function go1(){
 		
 		//<input type=button value=X style='margin:0px;' onclick=colapsa("+i+")> "+
 	//	citem.innerHTML+=c[i][0].nome;		
-//		citem.innerHTML+=	"</h3>"	
+	//	citem.innerHTML+="</h3>"	
 		
 		item = document.createElement("ol");
 		item.style='margin:0px;display:;margin-bottom:0px;border-top:dashed silver 1px;'
@@ -304,55 +330,55 @@ function wseek(x){
 
 
 
-function wbrano(x){
+function wfaixa(x){
 	p=document.getElementById("audio2");
 	p.pause()
-	brano=document.getElementById("brano").value
+	faixa=document.getElementById("faixa").value
     tanda=document.getElementById("tanda").value
-    console.log('t:'+tanda+',b:'+brano)
+    console.log('t:'+tanda+',b:'+faixa)
 
     if(document.getElementById("wl").value != 'loop')
     {
 		
 
     if(x=="plus")
-    {  	brano++
-	    	if(brano>=	c[tanda].length)
-    	{	brano=1
+    {  	faixa++
+	    	if(faixa>=	c[tanda].length)
+    	{	faixa=1
     		tanda++;
     		if(tanda>=c.length){
     			tanda=0
-    			brano=1
+    			faixa=1
     		}
     	}
     }
     else
-    {  	brano--
-  	    console.log('t:'+tanda+',b:'+brano)
-    	if(brano<1)
+    {  	faixa--
+  	    console.log('t:'+tanda+',b:'+faixa)
+    	if(faixa<1)
     	{	tanda--;
-   		    console.log('t:'+tanda+',b:'+brano)
+   		    console.log('t:'+tanda+',b:'+faixa)
     		if(tanda<0){
     			tanda=c.length-1
     			
     		}
-    		brano=c[tanda].length-1
-   		    console.log('t:'+tanda+',b:'+brano)
+    		faixa=c[tanda].length-1
+   		    console.log('t:'+tanda+',b:'+faixa)
     	}	
     }
 
    	if(document.getElementById("wa").value=="aleat")	
    	{	tanda=(Math.random()*c.length).toFixed(0)
-   		brano=(Math.random()*c[tanda].length).toFixed(0)
-   		if(brano==0)brano=1
+   		faixa=(Math.random()*c[tanda].length).toFixed(0)
+   		if(faixa==0)faixa=1
    	}
 }
 
    	document.getElementById("tanda").value=tanda
-   	document.getElementById("brano").value=brano
-   	console.log('+tanda:'+tanda+'brano:'+brano)
-   	b=document.getElementById('b.'+tanda+'.'+brano)
-   	play5(b,tanda,brano)
+   	document.getElementById("faixa").value=faixa
+   	console.log('+tanda:'+tanda+'faixa:'+faixa)
+   	b=document.getElementById('b.'+tanda+'.'+faixa)
+   	play5(b,tanda,faixa)
 
 }
 
@@ -366,6 +392,17 @@ function wloop(x){
 	else
 	{	document.getElementById("audio2").loop=true
 		document.getElementById("wl").value="loop"
+
+	}
+}
+
+function waleat(){
+	p=document.getElementById("wa").value;
+	if(p=="aleat")
+	{	document.getElementById("wa").value="noaleat"
+	}
+	else
+	{	document.getElementById("wa").value="aleat"
 
 	}
 }
@@ -396,7 +433,7 @@ function play5(x,i,j){
 	p=document.getElementById("audio2")
 
 	try {	//  tryCode - Block of code to try
-			document.getElementById("audio2").src=c[i][0].cartella+"/"+c[i][j].file+".mp3";
+			document.getElementById("audio2").src=c[i][0].pasta+"/"+c[i][j].file+".mp3";
 		}
 	catch(err) {	//catchCode - Block of code to handle errors
 			console.log("P5err1:"+err)
@@ -406,7 +443,7 @@ function play5(x,i,j){
 		}
 
 	p.load();	
-	document.getElementById('sn').value=c[i][0].cartella+"/"+c[i][j].file+".mp3"
+	document.getElementById('sn').value=c[i][0].pasta+"/"+c[i][j].file+".mp3"
 
 		p.play();
 
@@ -428,9 +465,9 @@ if(oname!=c[i][0].nome)
 }
 else
 {	l.innerHTML+="<br>"
-	//document.getElementById('played').innerHTML+="<br>"+c[i][0].cartella+"/"+c[i][j].file
+	//document.getElementById('played').innerHTML+="<br>"+c[i][0].pasta+"/"+c[i][j].file
 }
-l.innerHTML+="xcopy "+c[i][0].cartella+"/"+c[i][j].file+".mp3 z:\VillaNovembro2019 /S /E /Y"
+l.innerHTML+="xcopy "+c[i][0].pasta+"/"+c[i][j].file+".mp3 z:\VillaNovembro2019 /S /E /Y"
 
 	//var vid = document.getElementById("myVideo");
 	//vid.controls = true;
@@ -451,7 +488,7 @@ l.innerHTML+="xcopy "+c[i][0].cartella+"/"+c[i][j].file+".mp3 z:\VillaNovembro20
 	y.style.fontWeight="bold;"
 	y.style.fontSize="13px"
 	document.getElementById("tanda").value=i
-	document.getElementById("brano").value=j
+	document.getElementById("faixa").value=j
 
 	var  a=0,b=0;
 	for(a=0;a<c.length;a++)
@@ -471,29 +508,29 @@ l.innerHTML+="xcopy "+c[i][0].cartella+"/"+c[i][j].file+".mp3 z:\VillaNovembro20
 
 	//getElementById("audio2").addEventListener('ended',function(e){
 	t.addEventListener('ended',function(e){	
-    	brano=document.getElementById("brano").value
+    	faixa=document.getElementById("faixa").value
     	tanda=document.getElementById("tanda").value
-    	console.log('tanda:'+tanda+'brano:'+brano)
-    	brano++
+    	console.log('tanda:'+tanda+'faixa:'+faixa)
+    	faixa++
     
-    	if(brano>=	c[tanda].length)
-    	{	brano=1
+    	if(faixa>=c[tanda].length)
+    	{	faixa=1
     		tanda++;
     		if(tanda>=c.length){
     			tanda=0
-    			brano=1
+    			faixa=1
     		}
     	}
-    	console.log('+tanda:'+tanda+'brano:'+brano)
-    	b=document.getElementById('b.'+tanda+'.'+brano)
+    	console.log('+tanda:'+tanda+'faixa:'+faixa)
+    	b=document.getElementById('b.'+tanda+'.'+faixa)
 
     	
 	   if(document.getElementById("autoplay").value=="autoplay-on")
-    	{ play5(b,tanda,brano)
+    	{ play5(b,tanda,faixa)
     	}
     	
 
-    	document.getElementById("brano").value=brano
+    	document.getElementById("faixa").value=faixa
     	document.getElementById("tanda").value=tanda
     	
     });
